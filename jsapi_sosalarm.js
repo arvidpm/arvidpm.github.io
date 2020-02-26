@@ -1,4 +1,7 @@
 (() => {
+
+    alert("Script init");
+    
     //code added here runs when agent logs in
     ACE.JSApi.onScreenPop((popMsg) => {
 
