@@ -2,7 +2,7 @@
     //code added here runs when agent logs in
     ACE.JSApi.onScreenPop((popMsg) => {
 
-        alert("Hej!");
+        alert("onScreenPop event!");
       
         console.log('Screen pop event', popMsg);
         
@@ -12,11 +12,11 @@
             console.log('A-number:' + popMsg.contact.contactData.ani);
     
             //this opens an URL in a custom card inside ACE Interact, men det är beroende av inställningar på sidan som inkluderas (X-Frame-Options)
-            // ACE.JSApi.openCustomContent({
-            //     url: 'https://www.sosalarm.se',
-            //     title: 'SOS Alarm',
-            //     customCardId: 'web1'
-            // });
+            ACE.JSApi.openCustomContent({
+                url: 'https://www.sosalarm.se',
+                title: 'SOS Alarm',
+                customCardId: 'web1'
+            });
 
             var callingNumber = popMsg.contact.contactData.ani;
             var applicationUrl = 'https://crmtest.sosalarm.local:8017/new-incoming-call?from='; // will need to fix hard coded url
@@ -29,6 +29,7 @@
         //agent can manually trigger events
         else if (popMsg.popEvent == 'manual') {
             console.log('manual screenpop');
+            alert("Manual screenpop!")
         }
     }); 
 })();
