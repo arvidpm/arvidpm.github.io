@@ -1,6 +1,8 @@
 (() => {
     //code added here runs when agent logs in
     ACE.JSApi.onScreenPop((popMsg) => {
+
+        alert("Hej!");
       
         console.log('Screen pop event', popMsg);
         
