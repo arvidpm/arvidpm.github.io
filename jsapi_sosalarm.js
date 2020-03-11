@@ -4,15 +4,17 @@
     ACE.JSApi.onScreenPop((popMsg) => {
 
         console.log('Screen pop event', popMsg);
+
+        var callingNumber = popMsg.contact.contactData.ani;
+        var agentName = popMsg.contact.contactData.agentName;
+        var allowedAgents = ["tekj"];
         
-        if (popMsg.contact.contactData.agentName == 'ulk' ||
-        popMsg.contact.contactData.agentName == 'tekj' ||
-        popMsg.contact.contactData.agentName == 'TeliaTest') {
+        if (allowedAgents.includes(agentName)) {
     
             if (popMsg.popEvent == 'afterNormalAccept') {
         
                 console.log('afterNormalAccept screenpop');
-                console.log('A-number:' + popMsg.contact.contactData.ani);
+                console.log('A-number:' + callingNumber);
         
                 //this opens an URL in a custom card inside ACE Interact, men det är beroende av inställningar på sidan som inkluderas (X-Frame-Options)
                 // ACE.JSApi.openCustomContent({
