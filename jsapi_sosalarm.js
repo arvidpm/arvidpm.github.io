@@ -5,7 +5,7 @@
 
         console.log('Screen pop event', popMsg);
 
-        var callingNumber = popMsg.contact.contactData.ani;
+        var callingNumber = popMsg.contact.contactData.Ani;
         var agentName = popMsg.contact.contactData.agentName;
         var allowedAgents = ["tekj", "hkrr"];
 
@@ -25,7 +25,7 @@
                 //     customCardId: 'web1'
                 // });
 
-                // var callingNumber = popMsg.contact.contactData.ani;
+                // var callingNumber = popMsg.contact.contactData.Ani;
                 // var applicationUrl = 'https://crmtest.sosalarm.local:8017/new-incoming-call?from='; // will need to fix hard coded url
                 // var applicationEntryPoint = applicationUrl + callingNumber;
 
