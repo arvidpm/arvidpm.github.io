@@ -7,7 +7,9 @@
 
         var callingNumber = popMsg.contact.contactData.ani;
         var agentName = popMsg.contact.contactData.agentName;
-        var allowedAgents = ["tekj"];
+        var allowedAgents = ["tekj", "hkrr"];
+
+        console.log('Calling number: ' + callingNumber);
         
         if (allowedAgents.includes(agentName)) {
     
