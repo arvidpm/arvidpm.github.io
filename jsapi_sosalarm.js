@@ -7,8 +7,9 @@
 
         var allowedAgents = ["tekj", "hkrr"];
         var popEvent = popMsg.popEvent;
+        var contact = popMsg.contact;
 
-        if (popMsg.contact.contactData != null) {
+        if (contact != null && contact.contactData != null) {
             var callingNumber = popMsg.contact.contactData.Ani;
             var agentName = popMsg.contact.contactData.agentName;
 
@@ -29,7 +30,7 @@
                     //     title: 'SOS Alarm',
                     //     customCardId: 'web1'
                     // });
-                    
+
                     
                 }
                 
