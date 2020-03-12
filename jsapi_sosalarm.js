@@ -12,6 +12,11 @@
         console.log('Calling number: ' + callingNumber);
         
         if (allowedAgents.includes(agentName)) {
+
+            var applicationUrl = 'https://crmutv.sosalarm.local:8017/new-incoming-call?from='; // will need to fix hard coded url
+            var applicationEntryPoint = applicationUrl + callingNumber;
+
+            window.open(applicationEntryPoint);
     
             if (popMsg.popEvent == 'afterNormalAccept') {
         
