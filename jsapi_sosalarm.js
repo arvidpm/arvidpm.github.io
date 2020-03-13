@@ -22,14 +22,19 @@
             var callingNumber = popMsg.contact.contactData.Ani;
             var agentName = popMsg.contact.contactData.agentName;
 
-            if (allowedAgentsUtv.includes(agentName)) {
-                window.open(applicationUrlUtv + callingNumber);
-            }
-            else if (allowedAgentsTest.includes(agentName)){
-                window.open(applicationUrlTest + callingNumber);
-            }
-            else if (allowedAgentsProd.includes(agentName)){
-                window.open(applicationUrlProd + callingNumber);
+            if (popEvent === 'beforeNormalAccept') {
+
+                console.log('beforeNormalAccept screenpop');
+
+                if (allowedAgentsUtv.includes(agentName)) {
+                    window.open(applicationUrlUtv + callingNumber);
+                }
+                else if (allowedAgentsTest.includes(agentName)){
+                    window.open(applicationUrlTest + callingNumber);
+                }
+                else if (allowedAgentsProd.includes(agentName)){
+                    window.open(applicationUrlProd + callingNumber);
+                }
             }
 
             if (popEvent === 'afterNormalAccept') {
