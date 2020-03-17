@@ -6,7 +6,7 @@
         console.log('Screen pop event', popMsg);
 
         // Agents can only be placed in one group at a time
-        var allowedAgentsUtv = ["tekj", "hkrr"];
+        var allowedAgentsUtv = ["tekj", "hkrr", "ulk"];
         var allowedAgentsTest = [];
         var allowedAgentsProd = [];
 
