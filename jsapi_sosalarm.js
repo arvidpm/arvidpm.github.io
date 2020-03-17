@@ -6,8 +6,8 @@
         console.log('Screen pop event', popMsg);
 
         // Agents can only be placed in one group at a time
-        var allowedAgentsUtv = ["tekj", "hkrr"];
-        var allowedAgentsTest = [];
+        var allowedAgentsUtv = ["tekj"];
+        var allowedAgentsTest = ["hkrr"]; // ["lmli", "kstj", "ksjt", "kssk", "ulk", "omm", "ksar"]; To be replaced with acceptance test starts
         var allowedAgentsProd = [];
 
         var applicationUrlUtv = 'https://crmutv.sosalarm.local:8017/new-incoming-call?from=';
