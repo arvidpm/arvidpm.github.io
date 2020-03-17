@@ -6,7 +6,7 @@
         console.log('Screen pop event', popMsg);
 
         // Agents can only be placed in one group at a time
-        var allowedAgentsUtv = ["tekj", "hkrr", "ulk"];
+        var allowedAgentsUtv = ["tekj", "hkrr"];
         var allowedAgentsTest = [];
         var allowedAgentsProd = [];
 
@@ -22,9 +22,7 @@
             var callingNumber = popMsg.contact.contactData.Ani;
             var agentName = popMsg.contact.contactData.agentName;
 
-            if (popEvent === 'beforeNormalAccept') {
-
-                console.log('beforeNormalAccept screenpop');
+            if (popEvent === 'afterNormalAccept') {
 
                 if (allowedAgentsUtv.includes(agentName)) {
                     window.open(applicationUrlUtv + callingNumber);
@@ -37,17 +35,13 @@
                 }
             }
 
-            if (popEvent === 'afterNormalAccept') {
-            
-                console.log('afterNormalAccept screenpop');
-        
-                // This opens an URL in a custom card inside ACE Interact, men det är beroende av inställningar på sidan som inkluderas (X-Frame-Options)
-                // ACE.JSApi.openCustomContent({
-                //     url: 'https://www.sosalarm.se',
-                //     title: 'SOS Alarm',
-                //     customCardId: 'web1'
-                // });
-            }
+            // This opens an URL in a custom card inside ACE Interact, men det är beroende av inställningar på sidan som inkluderas (X-Frame-Options)
+            // ACE.JSApi.openCustomContent({
+            //     url: 'https://www.sosalarm.se',
+            //     title: 'SOS Alarm',
+            //     customCardId: 'web1'
+            // });
+                
             // Agent can manually trigger events
             else if (popMsg.popEvent == 'manual') {
                 console.log('manual screenpop');
