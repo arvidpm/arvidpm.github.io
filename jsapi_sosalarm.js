@@ -7,7 +7,7 @@
 
         // Agents can only be placed in one group at a time
         var allowedAgentsUtv = ["tekj", "hkrr"];
-        var allowedAgentsTest = [];
+        var allowedAgentsTest = ["hkrp"];
         var allowedAgentsProd = ["ksjt", "lmli", "kstj", "kssk", "ulk", "omm", "ksar"];
 
         var applicationUrlUtv = 'https://crmutv.sosalarm.local:8017/new-incoming-call?from=';
