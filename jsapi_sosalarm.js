@@ -6,9 +6,9 @@
         console.log('Screen pop event', popMsg);
 
         // Agents can only be placed in one group at a time
-        var allowedAgentsUtv = ["tekj", "hkrr", "hkap"];
-        var allowedAgentsTest = ["hkrp"];
-        var allowedAgentsProd = ["ksjt", "lmli", "kstj", "kssk", "ulk", "omm", "ksar", "ksri", "usj", "ksmr", "oli", "ksae", "kstp"];
+        var allowedAgentsUtv = ["tekj", "hkap"];
+        var allowedAgentsTest = ["hkrp", "hkrr"];
+        var allowedAgentsProd = ["ksjt", "lmli", "kstj", "kssk", "ulk", "omm", "ksar", "ksri", "usj", "ksmr", "oli", "ksae", "kstp", "ksao", "ksmq", "ksab", "ksmp", "ksns"];
 
         var applicationUrlUtv = 'https://crmutv.sosalarm.local:8017/new-incoming-call?from=';
         var applicationUrlTest = 'https://crmtest.sosalarm.local:8017/new-incoming-call?from=';
