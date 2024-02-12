@@ -1,0 +1,9 @@
+﻿@page "/generateexcelsheet"
+@using Microsoft.FluentUI.AspNetCore.Components
+
+<PageTitle>Generate Excel Sheet</PageTitle>
+
+<h4>Placeholder</h4>
+<FluentTextField @bind-Value=SheetValue Appearance="FluentInputAppearance.Filled" Placeholder="Skriv exceltext"></FluentTextField>
+
+<FluentButton Appearance="Appearance.Lightweight" @onclick="GenerateSheet">Generate excel sheet</FluentButton>
