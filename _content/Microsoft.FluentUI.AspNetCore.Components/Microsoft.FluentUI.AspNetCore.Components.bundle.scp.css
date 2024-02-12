@@ -103,18 +103,18 @@ fluent-data-grid[b-ppmhrkw1mj] {
     --col-gap: 1rem;
 }
 
-[b-ppmhrkw1mj] .empty-content-row {
+[b-ppmhrkw1mj] .empty-content-row,
+[b-ppmhrkw1mj] .loading-content-row {
     width: 100%;
-    height: 100%;
+    height: 100% !important ;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-[b-ppmhrkw1mj] .empty-content-cell {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+[b-ppmhrkw1mj] .empty-content-cell, 
+[b-ppmhrkw1mj] .loading-content-cell {
+
     font-weight: 600;
 }
 
@@ -131,7 +131,6 @@ fluent-data-grid[b-ppmhrkw1mj] {
 
 [dir=rtl] .col-options[b-ppmhrkw1mj] {
     left: unset;
-    
 }
 
 .col-justify-end .col-options[b-ppmhrkw1mj], .col-justify-right .col-options[b-ppmhrkw1mj] {
@@ -160,10 +159,9 @@ fluent-data-grid[b-ppmhrkw1mj] {
     cursor: col-resize;
 }
 
-    .col-width-draghandle:hover[b-ppmhrkw1mj], .col-width-draghandle:active[b-ppmhrkw1mj] {
-        background: var(--neutral-stroke-divider-rest);
-    }
-
+.col-width-draghandle:hover[b-ppmhrkw1mj], .col-width-draghandle:active[b-ppmhrkw1mj] {
+    background: var(--neutral-stroke-divider-rest);
+}
 /* _content/Microsoft.FluentUI.AspNetCore.Components/Components/DataGrid/FluentDataGridCell.razor.rz.scp.css */
 fluent-data-grid-cell[b-w6qdxfylwy] {
     text-overflow: ellipsis;
@@ -786,6 +784,7 @@ fluent-dialog[class~="left"][b-dsxskpj5rr]::part(control) {
     border-radius: unset;
     border-width: 0;
     --dialog-height: 100dvh;
+    overflow-y: auto;
 }
 
 :is(fluent-dialog[class~="right"], fluent-dialog[class~="left"])[b-dsxskpj5rr]  .fluent-dialog-body {
@@ -1527,31 +1526,31 @@ div[dragged-over][b-qxma62j335] {
 
 /* Hidden */
 
-@media (max-width: 599px) {
+@media (max-width: 599.98px) {
     .fluent-grid[b-9fxwfzgab8]  > div[hidden-when~="xs"] {
         display: none;
     }
 }
 
-@media (min-width: 600px) and (max-width: 959px) {
+@media (min-width: 600px) and (max-width: 959.98px) {
     .fluent-grid[b-9fxwfzgab8]  > div[hidden-when~="sm"] {
         display: none;
     }
 }
 
-@media (min-width: 960px) and (max-width: 1279px) {
+@media (min-width: 960px) and (max-width: 1279.98px) {
     .fluent-grid[b-9fxwfzgab8]  > div[hidden-when~="md"] {
         display: none;
     }
 }
 
-@media (min-width: 1280px) and (max-width: 1919px) {
+@media (min-width: 1280px) and (max-width: 1919.98px) {
     .fluent-grid[b-9fxwfzgab8]  > div[hidden-when~="lg"] {
         display: none;
     }
 }
 
-@media (min-width: 1920px) and (max-width: 2559px) {
+@media (min-width: 1920px) and (max-width: 2559.98px) {
     .fluent-grid[b-9fxwfzgab8]  > div[hidden-when~="xl"] {
         display: none;
     }
@@ -1627,6 +1626,12 @@ div[dragged-over][b-qxma62j335] {
         text-align: center;
         line-height: 8px;
         font-size: var(--type-ramp-minus-2-font-size);
+    }
+
+    .fluent-inputfile-container[disabled][b-72uj7bp8pi], .fluent-inputfile-container[disabled="true"][b-72uj7bp8pi] {
+        opacity: 0.5;
+        pointer-events: none;
+        cursor: not-allowed;
     }
 /* _content/Microsoft.FluentUI.AspNetCore.Components/Components/Label/FluentInputLabel.razor.rz.scp.css */
 .fluent-input-label[b-hum22yrq17] {
@@ -2132,7 +2137,6 @@ div[dragged-over][b-qxma62j335] {
     }
 
 [b-hv9rzieq3w] .fluent-nav-icon {
-    margin-inline-end: calc(var(--design-unit) * 2px + 2px);
     min-width: 20px;
 }
 
@@ -2192,7 +2196,7 @@ div[dragged-over][b-qxma62j335] {
 }
 
 [b-5upkyn31e7] .fluent-nav-icon {
-    margin-inline-end: calc(var(--design-unit) * 2px + 2px);
+    
     min-width: 20px;
 }
 
@@ -2209,8 +2213,8 @@ div[dragged-over][b-qxma62j335] {
 /* _content/Microsoft.FluentUI.AspNetCore.Components/Components/NavMenu/FluentNavMenu.razor.rz.scp.css */
 /*  NavMenu */
 .fluent-nav-menu[b-vs37bumpa7] {
-    flex-direction: column;
-    align-items: stretch;
+    padding: 0 2px;
+    
 }
 
 [b-vs37bumpa7] .fluent-nav-item.expander:focus-within {
@@ -2218,7 +2222,7 @@ div[dragged-over][b-qxma62j335] {
 }
 
 [b-vs37bumpa7] .fluent-nav-item {
-    margin: calc(var(--design-unit) * 1px + 1px) 0;
+    margin: calc(var(--design-unit) * 1px) 0;
     -webkit-user-select: none;
     user-select: none;
 }
@@ -2269,7 +2273,7 @@ div[dragged-over][b-qxma62j335] {
 }
 
 [b-vs37bumpa7] .fluent-nav-group .fluent-nav-item:last-of-type, .fluent-nav-menu .fluent-nav-item:last-of-type[b-vs37bumpa7] {
-    margin-bottom: 0;
+    margin-bottom: 2px;
 }
 
 /* level indenting */
@@ -2290,6 +2294,7 @@ div[dragged-over][b-qxma62j335] {
 }
 
 [b-vs37bumpa7] .fluent-nav-text {
+    margin-inline-start: calc(var(--design-unit) * 2px + 2px);
     overflow: hidden;
     text-overflow: ellipsis;
     width: calc(100% - 70px);
@@ -2370,7 +2375,9 @@ div[dragged-over][b-qxma62j335] {
 }
 
     
-
+[dir="rtl"] *[b-mskuhp0vb1]  fluent-button > svg {
+    transform: rotate(180deg);
+}
 /* _content/Microsoft.FluentUI.AspNetCore.Components/Components/Popover/FluentPopover.razor.rz.scp.css */
 .fluent-popover-content[b-qp3z8ghd2d]  {
     font-family: var(--body-font);
@@ -2394,6 +2401,7 @@ div[dragged-over][b-qxma62j335] {
         width: inherit;
         margin-top: 1em;
         display: flex;
+        flex-direction: column;
     }
 
     .fluent-popover-content .fluent-popover-footer[b-qp3z8ghd2d] {
@@ -2431,6 +2439,249 @@ div[dragged-over][b-qxma62j335] {
 fluent-radio[b-98313echfq] {
     margin: calc(var(--design-unit) * 1px) 0;
 }
+/* _content/Microsoft.FluentUI.AspNetCore.Components/Components/SortableList/FluentSortableList.razor.rz.scp.css */
+/* 
+  you need the ::deep identifier if you are using scoped styles like this
+  because scoped styles are only applied to markup in the component, not
+  to the markup inside the render fragment.
+*/
+
+.fluent-sortable-list[b-0uum8h8hrq] {
+    --fluent-sortable-list-background-color: var(--neutral-layer-2);
+    --fluent-sortable-list-item-height: calc(var(--design-unit) * 8px);
+    --fluent-sortable-list-filtered: var(--warning);
+    border: calc(var(--stroke-width) * 1px) solid var(--neutral-stroke-input-active);
+    border-radius: calc(var(--control-corner-radius) * 1px);
+    padding: calc(var(--design-unit) * 1px);
+    min-height: var(--fluent-sortable-list-item-height);
+}
+
+    /*Not sure yet if this can be deleted. Need to test on iOS*/
+    /*.fluent-sortable-list ::deep .sortable-fallback {
+        opacity: 1 !important
+    }*/
+
+    .fluent-sortable-list[b-0uum8h8hrq]  .sortable-grab {
+        cursor: grab;
+        background-color: var(--neutral-layer-1);
+        display: flex;
+        position: relative;
+        height: 100%;
+        left: calc(var(--design-unit) * -2px);
+        right: unset;
+        border-radius: calc(var(--control-corner-radius)* 1px) 0 0 calc(var(--control-corner-radius)* 1px);
+        width: 32px;
+        padding: 0 5px;
+    }
+
+    [dir='rtl'] .fluent-sortable-list[b-0uum8h8hrq]  .sortable-grab {
+        left: unset;
+        right: calc(var(--design-unit) * -2px);
+        border-radius: 0 calc(var(--control-corner-radius)* 1px) calc(var(--control-corner-radius)* 1px) 0;
+    }
+
+.fluent-sortable-list[b-0uum8h8hrq]  .sortable-item {
+    display: flex;
+    align-items: center;
+    height: var(--fluent-sortable-list-item-height) !important;
+    background-color: var(--fluent-sortable-list-background-color);
+    border: calc(var(--stroke-width) * 1px) solid var(--neutral-stroke-input-active);
+    border-radius: calc(var(--control-corner-radius) * 1px);
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    padding: 0 calc(var(--design-unit) * 2px);
+    margin-bottom: 2px;
+}
+
+    .fluent-sortable-list[b-0uum8h8hrq]  .sortable-item:last-of-type {
+        margin-bottom: 0;
+    }
+
+.fluent-sortable-list[b-0uum8h8hrq]  .sortable-ghost > .sortable-item-content {
+    background-color: var(--neutral-layer-1) !important;
+}
+
+.fluent-sortable-list[b-0uum8h8hrq]  .sortable-ghost {
+    background: var(--neutral-layer-1) !important;
+    border: calc(var(--stroke-width) * 1px) dotted var(--accent-fill-rest) !important;
+}
+
+.fluent-sortable-list > .sortable-item:is(.filtered)[b-0uum8h8hrq] {
+    background: var(--fluent-sortable-list-filtered);
+}
+/* _content/Microsoft.FluentUI.AspNetCore.Components/Components/Splitter/FluentMultiSplitter.razor.rz.scp.css */
+.fluent-multi-splitter[b-ug2ltnxcve] {
+    /* Resize Icon colors */
+    --fluent-multi-splitter-color: var(--neutral-stroke-strong-rest);
+    --fluent-multi-splitter-color-active: var(--neutral-stroke-strong-hover);
+
+    /* Bar colors */
+    --fluent-multi-splitter-background-color: var(--neutral-stroke-rest);
+    --fluent-multi-splitter-background-color-active: var(--neutral-stroke-hover);
+    --fluent-multi-splitter-hover-opacity: 0.8;
+    
+    /* Bar size */
+    --fluent-multi-splitter-bar-size: 8px;
+
+    /* Styles */
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+}
+
+    /* Resize bar */
+    .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar {
+        flex: 0 0 auto;
+        position: relative;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--fluent-multi-splitter-color);
+        background-color: var(--fluent-multi-splitter-background-color);
+        opacity: 0.4;
+        user-select: none;
+        font-size: 8px;
+    }
+
+        .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar > span[part="resize"] {
+            border: 1px solid var(--fluent-multi-splitter-color);
+            border-radius: 1px;
+        }
+
+        /* Collapse button */
+        .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar > span[part="collapse"] {
+            display: table;
+        }
+
+            .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar > span[part="collapse"]:before {
+                line-height: normal;
+                display: table-cell;
+            }
+
+            .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar > span[part="collapse"]:hover {
+                cursor: pointer;
+            }
+
+        /* Expand button */
+        .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar > span[part="expand"] {
+            display: table;
+        }
+
+            .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar > span[part="expand"]:before {
+                line-height: normal;
+                display: table-cell;
+            }
+
+            .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar > span[part="expand"]:hover {
+                cursor: pointer;
+            }
+
+    /* Hover and Active */
+    .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar[status="resizable"]:hover {
+        background-color: var(--fluent-multi-splitter-background-color);
+        opacity: var(--fluent-multi-splitter-hover-opacity);
+    }
+
+    .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar[status="resizable"]:active {
+        background-color: var(--fluent-multi-splitter-background-color-active);
+        opacity: var(--fluent-multi-splitter-hover-opacity);
+    }
+
+        .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar[status="resizable"]:active > span[part="expand"],
+        .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar[status="resizable"]:active > span[part="resize"],
+        .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar[status="resizable"]:active > span[part="collapse"] {
+            color: var(--fluent-multi-splitter-color-active);
+        }
+
+        .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar[status="resizable"]:active > span[part="resize"] {
+            border: 1px solid var(--fluent-multi-splitter-color-active);
+        }
+
+    /* Disabled */
+    .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-bar[status="resizable"]:disabled {
+        opacity: 0.2;
+    }
+
+/* Horizontal bar */
+.fluent-multi-splitter[orientation="horizontal"][b-ug2ltnxcve] {
+    flex-direction: row;
+}
+
+    .fluent-multi-splitter[orientation="horizontal"][b-ug2ltnxcve]  > .fluent-multi-splitter-bar {
+        flex-direction: column;
+        width: var(--fluent-multi-splitter-bar-size);
+    }
+
+        .fluent-multi-splitter[orientation="horizontal"][b-ug2ltnxcve]  > .fluent-multi-splitter-bar > span[part="collapse"]:before {
+            content: '\025C0;';            
+        }
+
+        .fluent-multi-splitter[orientation="horizontal"][b-ug2ltnxcve]  > .fluent-multi-splitter-bar > span[part="resize"] {
+            height: 16px;
+            margin: 2px 0;
+        }
+
+        .fluent-multi-splitter[orientation="horizontal"][b-ug2ltnxcve]  > .fluent-multi-splitter-bar > span[part="expand"]:before {
+            content: '\025B6;';
+        }
+
+        .fluent-multi-splitter[orientation="horizontal"][b-ug2ltnxcve]  > .fluent-multi-splitter-bar[status="resizable"]:hover {
+            cursor: ew-resize;
+        }
+
+/* Vertical bar */
+.fluent-multi-splitter[orientation="vertical"][b-ug2ltnxcve] {
+    flex-direction: column;
+}
+
+    .fluent-multi-splitter[orientation="vertical"][b-ug2ltnxcve]  > .fluent-multi-splitter-bar {
+        flex-direction: row;
+        height: var(--fluent-multi-splitter-bar-size);
+    }
+
+        .fluent-multi-splitter[orientation="vertical"][b-ug2ltnxcve]  > .fluent-multi-splitter-bar > span[part="collapse"]:before {
+            content: '\025B2;';
+        }
+
+        .fluent-multi-splitter[orientation="vertical"][b-ug2ltnxcve]  > .fluent-multi-splitter-bar > span[part="resize"] {
+            width: 16px;
+            margin: 0 2px;
+        }
+
+        .fluent-multi-splitter[orientation="vertical"][b-ug2ltnxcve]  > .fluent-multi-splitter-bar > span[part="expand"]:before {
+            content: '\025BC;';
+        }
+
+        .fluent-multi-splitter[orientation="vertical"][b-ug2ltnxcve]  > .fluent-multi-splitter-bar[status="resizable"]:hover {
+            cursor: ns-resize;
+        }
+
+/* Pane */
+.fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-pane {
+    overflow: hidden;
+    position: relative;
+    flex: 0 1 auto;
+}
+
+    .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-pane[status="collapsed"] {
+        flex: 0 1 0% !important;
+        overflow: hidden !important;
+        display: block !important;
+    }
+
+    .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-pane[status="lastresizable"] {
+        flex: 1 1 auto;
+    }
+
+    .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-pane[status="resizable"] {
+    }
+
+    .fluent-multi-splitter[b-ug2ltnxcve]  > .fluent-multi-splitter-pane[status="locked"] {
+    }
 /* _content/Microsoft.FluentUI.AspNetCore.Components/Components/Stack/FluentStack.razor.rz.scp.css */
 .stack-vertical[b-0nr62qx0mz] {
     display: flex;
@@ -2636,4 +2887,251 @@ fluent-tab[b-urryfr514w] {
 /* _content/Microsoft.FluentUI.AspNetCore.Components/Components/TreeView/FluentTreeItem.razor.rz.scp.css */
 .treeitem-text[b-toee5o4b4e] {
     pointer-events: none;
+}
+/* _content/Microsoft.FluentUI.AspNetCore.Components/Components/Wizard/FluentWizard.razor.rz.scp.css */
+.fluent-wizard[b-l81u9o5gjc] {
+    display: grid;
+    height: 100%;
+    --fluent-wizard-circle-size: 24px;
+    --fluent-wizard-spacing: 4px;
+}
+
+    .fluent-wizard[border-outside][b-l81u9o5gjc] {
+        border: 1px solid var(--neutral-stroke-hover);
+    }
+
+    .fluent-wizard > ol[b-l81u9o5gjc] {
+        display: flex;
+        padding-inline-start: 0px;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+        padding: 10px;
+    }
+
+    .fluent-wizard .fluent-wizard-buttons[b-l81u9o5gjc] {
+        display: flex;
+        justify-content: end;
+    }
+
+    .fluent-wizard .fluent-wizard-buttons[border-inside][b-l81u9o5gjc] {
+        border-top: 1px solid var(--neutral-stroke-hover);
+    }
+
+    /* Wizard with steps on Left */
+    .fluent-wizard[position="left"][b-l81u9o5gjc] {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr auto;
+    }
+
+        .fluent-wizard[position="left"] > ol[b-l81u9o5gjc] {
+            flex-direction: column;
+            grid-column: 1;
+            grid-row: 1 / span 2;
+        }
+
+            .fluent-wizard[position="left"] > ol[border-inside][b-l81u9o5gjc] {
+                border-right: 1px solid var(--neutral-stroke-hover);
+            }
+
+        .fluent-wizard[position="left"] .fluent-wizard-content[b-l81u9o5gjc] {
+            grid-column: 2;
+            grid-row: 1;
+            margin: 5px 10px 0px 15px;
+        }
+
+        .fluent-wizard[position="left"] .fluent-wizard-buttons[b-l81u9o5gjc] {
+            grid-column: 2;
+            grid-row: 2;
+            text-align-last: end;
+            padding: 10px;
+        }
+
+    /* Wizard with steps on Top */
+    .fluent-wizard[position="top"][b-l81u9o5gjc] {
+        grid-template-columns: auto;
+        grid-template-rows: auto 1fr auto;
+    }
+
+        .fluent-wizard[position="top"] > ol[b-l81u9o5gjc] {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+            .fluent-wizard[position="top"] > ol[border-inside][b-l81u9o5gjc] {
+                border-bottom: 1px solid var(--neutral-stroke-hover);
+            }
+
+        .fluent-wizard[position="top"] .fluent-wizard-content[b-l81u9o5gjc] {
+            margin: 5px 10px 0px 10px;
+        }
+
+        .fluent-wizard[position="top"] .fluent-wizard-buttons[b-l81u9o5gjc] {
+            padding: 10px;
+        }
+/* _content/Microsoft.FluentUI.AspNetCore.Components/Components/Wizard/FluentWizardStep.razor.rz.scp.css */
+/* Wizard with steps */
+.fluent-wizard > ol > li[b-a5o5s1yurv] {
+    position: relative;
+    display: flex;
+}
+
+/* Wizard with steps on Left */
+.fluent-wizard[position="left"] > ol > li[b-a5o5s1yurv] {
+    gap: 10px;
+}
+
+    .fluent-wizard[position="left"] > ol > li[b-a5o5s1yurv]:before {
+        flex: 0 0 var(--fluent-wizard-circle-size);
+        height: var(--fluent-wizard-circle-size);
+    }
+
+    .fluent-wizard[position="left"] > ol > li:last-child[b-a5o5s1yurv] {
+        height: auto;
+    }
+
+    .fluent-wizard[position="left"] > ol > li:not(:last-child)[b-a5o5s1yurv]:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: calc(var(--fluent-wizard-circle-size) + var(--fluent-wizard-spacing));
+        bottom: var(--fluent-wizard-spacing);
+        order: -1;
+        transform: translateX(calc(var(--fluent-wizard-circle-size) / 2));
+        width: 2px;
+        background-color: var(--neutral-stroke-hover);
+    }
+
+/* Wizard with steps on Top */
+.fluent-wizard[position="top"] > ol > li[b-a5o5s1yurv] {
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+}
+
+    .fluent-wizard[position="top"] > ol > li[b-a5o5s1yurv]:before {
+        width: var(--fluent-wizard-circle-size);
+        height: var(--fluent-wizard-circle-size);
+        margin-left: calc((100% - var(--fluent-wizard-circle-size)) / 2);
+    }
+
+    .fluent-wizard[position="top"] > ol > li:not(:last-child)[b-a5o5s1yurv]:after {
+        content: "";
+        position: absolute;
+        left: calc(50% + calc(var(--fluent-wizard-circle-size) / 2 + var(--fluent-wizard-spacing)));
+        top: calc(var(--fluent-wizard-circle-size) / 2);
+        width: calc(100% - var(--fluent-wizard-circle-size) - calc(var(--fluent-wizard-spacing) * 2));
+        height: 2px;
+        order: -1;
+        background-color: var(--neutral-stroke-hover);
+    }
+
+/* Icon */
+.fluent-wizard > ol > li .fluent-wizard-icon[b-a5o5s1yurv] {
+    min-width: calc(1.2 * var(--fluent-wizard-circle-size));
+    min-height: calc(1.2 * var(--fluent-wizard-circle-size));
+}
+
+/* Icon Number */
+.fluent-wizard > ol > li .fluent-wizard-icon-number[b-a5o5s1yurv] {
+    margin-top: calc(var(--fluent-wizard-circle-size) * -1 - 3px);
+    font-size: small;
+    color: var(--accent-fill-rest);
+    text-align: center;
+}
+
+.fluent-wizard[position="top"] > ol > li .fluent-wizard-icon-number[b-a5o5s1yurv] {
+    height: var(--fluent-wizard-circle-size);
+}
+
+.fluent-wizard[position="left"] > ol > li .fluent-wizard-icon-number[b-a5o5s1yurv] {
+    width: var(--fluent-wizard-circle-size);
+    height: var(--fluent-wizard-circle-size);
+}
+
+.fluent-wizard > ol > li .fluent-wizard-icon-number[disabled][b-a5o5s1yurv] {
+    opacity: var(--disabled-opacity);
+}
+
+.fluent-wizard > ol > li .fluent-wizard-icon-number[status='previous']:not([disabled])[b-a5o5s1yurv] {
+    color: var(--foreground-on-accent-rest);
+}
+
+.fluent-wizard > ol > li .fluent-wizard-icon-number[status='current']:not([disabled])[b-a5o5s1yurv] {
+    color: var(--foreground-on-accent-rest);
+}
+
+.fluent-wizard > ol > li .fluent-wizard-icon-number[status='next']:not([disabled])[b-a5o5s1yurv] {
+    color: var(--accent-fill-rest);
+}
+
+/* Title */
+.fluent-wizard > ol > li .fluent-wizard-title[b-a5o5s1yurv] {
+    margin-block-start: 2px;
+    margin-block-end: 0px;
+    white-space: nowrap;
+}
+
+.fluent-wizard > ol > li[status='next'][b-a5o5s1yurv]  .fluent-wizard-title {
+    color: var(--neutral-stroke-strong-rest);
+}
+
+.fluent-wizard > ol > li[status='current'][b-a5o5s1yurv]  .fluent-wizard-title {
+    font-weight: bold;
+}
+
+/* Summary */
+.fluent-wizard > ol > li[b-a5o5s1yurv]  .fluent-wizard-summary {
+    margin-block-start: 4px;
+    margin-block-end: 0px;
+    font-size: smaller;
+}
+
+.fluent-wizard > ol > li[status='current'][b-a5o5s1yurv]  .fluent-wizard-summary {
+    color: var(--accent-fill-rest);
+}
+
+.fluent-wizard > ol > li[status='next'][b-a5o5s1yurv]  .fluent-wizard-summary {
+    color: var(--neutral-stroke-strong-rest);
+}
+
+/* Body */
+.fluent-wizard-body[b-a5o5s1yurv] {
+    margin: 10px;
+}
+
+/* Hidden */
+@media (max-width: 599.98px) {
+    .fluent-wizard > ol > li[b-a5o5s1yurv]  > div[hidden-when~="xs"] {
+        display: none;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 959.98px) {
+    .fluent-wizard > ol > li[b-a5o5s1yurv]  > div[hidden-when~="sm"] {
+        display: none;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1279.98px) {
+    .fluent-wizard > ol > li[b-a5o5s1yurv]  > div[hidden-when~="md"] {
+        display: none;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1919.98px) {
+    .fluent-wizard > ol > li[b-a5o5s1yurv]  > div[hidden-when~="lg"] {
+        display: none;
+    }
+}
+
+@media (min-width: 1920px) and (max-width: 2559.98px) {
+    .fluent-wizard > ol > li[b-a5o5s1yurv]  > div[hidden-when~="xl"] {
+        display: none;
+    }
+}
+
+@media (min-width: 2560px) {
+    .fluent-wizard > ol > li[b-a5o5s1yurv]  > div[hidden-when~="xxl"] {
+        display: none;
+    }
 }
